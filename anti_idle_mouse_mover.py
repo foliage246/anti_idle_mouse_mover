@@ -22,7 +22,7 @@ CONFIG = {
     "window_size": (340, 320), # Slightly larger window
     "fps": 60,
     "donation_url": "https://buymeacoffee.com/foliage246",
-    "icon_file": "anti_idle_mover.png", # Define the icon filename
+    "icon_file": "anti_idle_mouse_mover.png", # Define the icon filename
     "colors": {
         "bg_main": (248, 250, 252),      # Main background color (light gray)
         "bg_card": (255, 255, 255),      # Card background color (white)

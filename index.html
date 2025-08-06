@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防閒置移動器 (Anti-Idle Mover) - 保持您的電腦活躍</title>
+    
+    <!-- Tailwind CSS 用於樣式設計 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 使用 Inter 和 Noto Sans TC 字體 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        /* 元素載入時的簡單動畫 */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* 為元素添加延遲以產生交錯效果 */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* 語言切換按鈕的樣式 */
+        .lang-btn.active {
+            background-color: #3B82F6; /* blue-600 */
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- 頁首區塊 -->
+    <header class="bg-white shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-lg sm:text-xl font-bold text-slate-900">🖱️ Anti-Idle Mover</h1>
+            <div class="flex items-center gap-4">
+                <!-- 語言切換 -->
+                <div class="text-sm border border-slate-200 rounded-lg p-1 flex">
+                    <button id="lang-zh-btn" class="lang-btn px-2 py-1 rounded-md transition-colors">繁體中文</button>
+                    <button id="lang-en-btn" class="lang-btn px-2 py-1 rounded-md transition-colors">English</button>
+                </div>
+                <a href="https://buymeacoffee.com/foliage246" target="_blank" class="bg-yellow-400 text-slate-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors text-sm hidden sm:block lang-content lang-zh">
+                    請我喝杯咖啡 ☕
+                </a>
+                <a href="https://buymeacoffee.com/foliage246" target="_blank" class="bg-yellow-400 text-slate-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors text-sm hidden sm:block lang-content lang-en">
+                    Buy Me a Coffee ☕
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="container mx-auto px-6 py-12 sm:py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- 左側欄：文字內容 -->
+            <div class="text-center md:text-left">
+                <!-- 中文內容 -->
+                <div class="lang-content lang-zh">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4 fade-in-up">
+                        用最簡單的方式，<br>讓您的電腦保持清醒。
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 fade-in-up delay-1">
+                        一個輕巧易用的工具，可防止您的電腦進入閒置或睡眠狀態。非常適合避免通訊軟體顯示「離開」，或保持遠端工作階段的連線。
+                    </p>
+                </div>
+                <!-- 英文內容 -->
+                <div class="lang-content lang-en">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4 fade-in-up">
+                        Keep Your Computer Awake, The Simple Way.
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 fade-in-up delay-1">
+                        A lightweight utility that prevents your computer from going idle. Perfect for avoiding "Away" status on messaging apps or keeping remote sessions active.
+                    </p>
+                </div>
+                
+                <!-- 下載按鈕 -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start fade-in-up delay-2">
+                    <a href="https://github.com/foliage246/anti_idle_mouse_mover/releases/download/anti_idle_mouse_mover/anti_idle_mouse_mover_v1.0.exe" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 w-full sm:w-auto text-center lang-content lang-zh">
+                        ⬇️ 下載 Windows 版
+                    </a>
+                    <a href="https://github.com/foliage246/anti_idle_mouse_mover/releases/download/anti_idle_mouse_mover/anti_idle_mouse_mover_v1.0.exe" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 w-full sm:w-auto text-center lang-content lang-en">
+                        ⬇️ Download for Windows
+                    </a>
+                </div>
+                 <p class="text-xs text-slate-500 mt-3 fade-in-up delay-2 lang-content lang-zh">免費下載，無需安裝。</p>
+                 <p class="text-xs text-slate-500 mt-3 fade-in-up delay-2 lang-content lang-en">Free to download. No installation needed.</p>
+            </div>
+
+            <!-- 右側欄：應用程式截圖 -->
+            <div class="fade-in-up delay-3">
+                <div class="bg-white p-2 rounded-xl shadow-2xl ring-1 ring-slate-200">
+                    <!-- 重要：請將 'src' 替換成您自己的應用程式截圖連結 -->
+                    <img src="anti_idle_mouse_mover_screenshot.png" 
+                         alt="防閒置移動器 應用程式截圖" 
+                         class="rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 功能特色區塊 -->
+    <section class="bg-white py-16 sm:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2 fade-in-up lang-content lang-zh">功能一覽</h3>
+                <h3 class="text-3xl font-bold text-slate-900 mb-2 fade-in-up lang-content lang-en">Features at a Glance</h3>
+                <p class="text-slate-600 fade-in-up delay-1 lang-content lang-zh">簡單、有效，完全滿足您的需求。</p>
+                <p class="text-slate-600 fade-in-up delay-1 lang-content lang-en">Simple, effective, and does exactly what you need.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 功能 1 -->
+                <div class="bg-slate-50 p-8 rounded-xl fade-in-up delay-2 text-center">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-zh">可調式間隔</h4>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-en">Adjustable Interval</h4>
+                    <p class="text-slate-600 lang-content lang-zh">可從 1 到 3600 秒自由設定滑鼠移動的間隔，完美符合您的需求。</p>
+                    <p class="text-slate-600 lang-content lang-en">Set the jiggle interval from 1 to 3600 seconds to perfectly match your needs.</p>
+                </div>
+                <!-- 功能 2 -->
+                <div class="bg-slate-50 p-8 rounded-xl fade-in-up delay-3 text-center">
+                    <div class="text-4xl mb-4">⏯️</div>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-zh">簡易控制</h4>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-en">Easy Controls</h4>
+                    <p class="text-slate-600 lang-content lang-zh">清晰的「開始」與「停止」按鈕。執行期間會鎖定間隔輸入，防止誤觸。</p>
+                    <p class="text-slate-600 lang-content lang-en">A simple interface with Start and Stop buttons. The interval is locked while running.</p>
+                </div>
+                <!-- 功能 3 -->
+                <div class="bg-slate-50 p-8 rounded-xl fade-in-up delay-4 text-center">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-zh">輕巧免安裝</h4>
+                    <h4 class="text-xl font-semibold mb-2 text-slate-900 lang-content lang-en">Lightweight & Portable</h4>
+                    <p class="text-slate-600 lang-content lang-zh">無需安裝，下載後即可直接執行。程式乾淨，不留任何殘存檔案。</p>
+                    <p class="text-slate-600 lang-content lang-en">No installation required. Just download the app and run it directly. It's clean and portable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問題區塊 -->
+    <section class="bg-slate-50 py-16 sm:py-24">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-slate-900 mb-2 fade-in-up lang-content lang-zh">常見問題</h3>
+                <h3 class="text-3xl font-bold text-slate-900 mb-2 fade-in-up lang-content lang-en">Frequently Asked Questions</h3>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 fade-in-up delay-1">
+                <h4 class="text-lg font-semibold text-slate-900 mb-2 lang-content lang-zh">為什麼我看不到滑鼠移動？</h4>
+                <h4 class="text-lg font-semibold text-slate-900 mb-2 lang-content lang-en">Why can't I see the mouse move?</h4>
+                <p class="text-slate-600 lang-content lang-zh">這是刻意設計的！為了不干擾您的正常使用，程式只會將滑鼠移動一個像素然後立刻移回。這個移動小到肉眼無法察覺，但足以讓系統偵測到活動，以防止電腦進入閒置狀態。</p>
+                <p class="text-slate-600 lang-content lang-en">This is by design! To avoid interrupting your work, the app only moves the mouse by one pixel and immediately moves it back. This movement is too small to be seen but is enough for the system to detect activity and prevent it from going idle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="bg-slate-800 text-slate-400 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 SamYeh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langZhBtn = document.getElementById('lang-zh-btn');
+            const langEnBtn = document.getElementById('lang-en-btn');
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const enElements = document.querySelectorAll('.lang-en');
+
+            function setLanguage(lang) {
+                if (lang === 'en') {
+                    zhElements.forEach(el => el.style.display = 'none');
+                    enElements.forEach(el => el.style.display = '');
+                    langEnBtn.classList.add('active');
+                    langZhBtn.classList.remove('active');
+                    document.documentElement.lang = 'en';
+                } else {
+                    enElements.forEach(el => el.style.display = 'none');
+                    zhElements.forEach(el => el.style.display = '');
+                    langZhBtn.classList.add('active');
+                    langEnBtn.classList.remove('active');
+                    document.documentElement.lang = 'zh-Hant';
+                }
+            }
+
+            langZhBtn.addEventListener('click', () => setLanguage('zh'));
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+            // 根據瀏覽器語言設定預設值
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('en')) {
+                setLanguage('en');
+            } else {
+                setLanguage('zh');
+            }
+        });
+    </script>
+
+</body>
+</html>
