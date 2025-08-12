@@ -1,5 +1,10 @@
 # Python 虛擬環境
+<<<<<<< HEAD
 .venv/
+=======
+# 忽略您建立的 .venv_anti_idle_mover 資料夾
+.venv_anti_idle_mover/
+>>>>>>> 4ad772ce65510c266a2b81da438038536550f81b
 venv/
 *.venv
 
