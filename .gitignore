@@ -1,0 +1,22 @@
+# Python 虛擬環境
+.venv/
+venv/
+*.venv
+
+# PyInstaller 產生的檔案和資料夾
+# 這些是每次封裝時都會重新產生的
+/build/
+/dist/
+*.spec
+
+# Python 的快取檔案
+# 這些是 Python 自動產生用來加速的檔案
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 作業系統產生的檔案
+# 忽略 macOS 和 Windows 的系統設定檔
+.DS_Store
+Thumbs.db
